@@ -1,0 +1,17 @@
+lib:
+  files:
+    - '<%= jshint.lib %>'
+  tasks:
+    - 'scripts'
+    - 'blog'
+example:
+  files:
+    - 'example/**/*'
+  tasks:
+    - 'blog'
+build:
+  files:
+    - 'bower.json'
+    - 'Gruntfile.js'
+    - 'grunt/*.yaml'
+  tasks: 'default'

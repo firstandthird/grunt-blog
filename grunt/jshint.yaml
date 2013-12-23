@@ -1,0 +1,5 @@
+build:
+  - 'Gruntfile.js'
+lib:
+  - 'lib/**/*.js'
+  - 'tasks/**/*.js'

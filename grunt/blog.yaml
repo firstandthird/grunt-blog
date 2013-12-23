@@ -1,0 +1,15 @@
+options:
+  templateEngine: 'ejs'
+  home:
+    template: 'example/templates/home.ejs'
+    count: 5
+    paginationUrl: 'page_XX.html'
+  post:
+    template: 'example/templates/post.ejs'
+  listing:
+    template: 'example/templates/listing.ejs'
+    count: 10
+example:
+  src:
+    - 'example/posts/*.md'
+  dest: 'site/'

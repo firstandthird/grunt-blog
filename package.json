@@ -1,0 +1,26 @@
+{
+  "name": "grunt-blog",
+  "version": "0.0.0",
+  "description": "grunt-blog ==========",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/firstandthird/grunt-blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/firstandthird/grunt-blog/issues"
+  },
+  "homepage": "https://github.com/firstandthird/grunt-blog",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-notify": "~0.2.16",
+    "load-grunt-config": "~0.7.0",
+    "yaml-front-matter": "~2.1.11",
+    "async": "~0.2.9",
+    "markx": "~0.3.4",
+    "consolidate": "~0.10.0",
+    "ejs": "~0.8.5"
+  }
+}
