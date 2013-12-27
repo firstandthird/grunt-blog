@@ -50,30 +50,7 @@ module.exports = function(grunt) {
       posts = blogHelpers.sortPosts(posts);
 
       // Index page & Pagination
-      var perPage = options.home.count || 5;
-      var totalPages = ~~(posts.length / perPage + 1);
-
-      async.times(totalPages, function(n, callback) {
-        var page = n + 1;
-        var template = options.home.template;
-        var selectedPosts = posts.slice(perPage * n, perPage * page);
-        var output = '/' + options.home.paginationUrl.replace('XX', page);
-        var templateData = {
-          posts: selectedPosts,
-          page: page,
-          totalPages: totalPages,
-          perPage: perPage,
-          isHome: (page === 1)
-        };
-        
-        if(page === 1) {
-          output = '/' + 'index.html';
-        }
-
-        blogHelpers.generatePage(options.templateEngine, template, templateData, dest + output, callback);
-      }, function(err) {
-        done();
-      });
+      blogHelpers.generateIndex(options, posts, dest, done);
     });
   });
 };
