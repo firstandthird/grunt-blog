@@ -3,14 +3,13 @@
  * https://github.com/firstandthird/grunt-blog
  */
 
-var fs = require('fs');
-var blogHelpers = require('../lib/blog');
-var frontMatter = require('yaml-front-matter');
-var async = require('async');
-var markx = require('markx');
-var cons = require('consolidate');
-
 module.exports = function(grunt) {
+  var fs = require('fs');
+  var blogHelpers = require('../lib/blog')(grunt);
+  var frontMatter = require('yaml-front-matter');
+  var async = require('async');
+  var markx = require('markx');
+
   grunt.registerMultiTask('blog', 'Static blog thing', function() {
     var done = this.async();
     var options = this.options();
@@ -39,15 +38,7 @@ module.exports = function(grunt) {
 
         posts.push(fileData);
 
-        cons[options.templateEngine](options.post.template, fileData, function(err, html) {
-          if(err) {
-            grunt.log.errorlns(err);  
-          } else {
-            grunt.file.write(dest + fileData.relativeURL, html);
-          }
-
-          asyncDone();
-        });
+        blogHelpers.generatePage(options.templateEngine, options.post.template, fileData, dest + fileData.relativeURL, asyncDone);
       });
     }, function(err){
       if(err) {
@@ -79,15 +70,7 @@ module.exports = function(grunt) {
           output = '/' + 'index.html';
         }
 
-        cons[options.templateEngine](template, templateData, function(err, html) {
-          if(err) {
-            grunt.log.errorlns(err);  
-          } else {
-            grunt.file.write(dest + output, html);
-          }
-
-          callback();
-        });
+        blogHelpers.generatePage(options.templateEngine, template, templateData, dest + output, callback);
       }, function(err) {
         done();
       });
