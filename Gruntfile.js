@@ -6,5 +6,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('scripts', ['jshint', 'notify:generic']);
   grunt.registerTask('default', ['scripts', 'blog']);
-  grunt.registerTask('dev', ['default', 'notify:watch', 'watch']);
+  grunt.registerTask('dev', ['default', 'connect:server', 'notify:watch', 'watch']);
 };

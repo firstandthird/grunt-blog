@@ -6,9 +6,10 @@ options:
     paginationUrl: 'page_XX.html'
   post:
     template: 'example/templates/post.ejs'
-  listing:
-    template: 'example/templates/listing.ejs'
+  categories:
+    template: 'example/templates/category.ejs'
     count: 10
+    paginationUrl: 'CC_page_XX.html'
 example:
   src:
     - 'example/posts/*.md'
