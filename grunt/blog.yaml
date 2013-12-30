@@ -8,7 +8,7 @@ options:
     template: 'example/templates/post.ejs'
   categories:
     template: 'example/templates/category.ejs'
-    count: 10
+    count: 5
     paginationUrl: 'CC_page_XX.html'
 example:
   src:

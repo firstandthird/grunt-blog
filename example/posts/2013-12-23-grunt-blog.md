@@ -3,6 +3,7 @@ title: Grunt Blog Example
 categories:
   - examples
   - not-cat-related
+  - test
 excerpt: How to use grunt-blog.
 ---
 
