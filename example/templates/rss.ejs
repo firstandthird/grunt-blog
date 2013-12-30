@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Example Grunt Blog</title>
+    <description>Some description for this blog</description>
+    <link>http://example.com</link>
+    <atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml" />
+    <% for(var i=0; i<posts.length; i++) {%>
+    <item>
+      <title><%= posts[i].title %></title>
+      <description><%= posts[i].excerpt %></description>
+      <pubDate><%= posts[i].date %></pubDate>
+      <link>http://example.com/<%= posts[i].relativeURL %></link>
+      <guid isPermaLink="true">http://example.com/<%= posts[i].relativeURL %></guid>
+    </item>
+    <% } %>
+  </channel>
+</rss>

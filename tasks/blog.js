@@ -64,7 +64,9 @@ module.exports = function(grunt) {
 
       async.parallelLimit([
         async.apply(blogHelpers.generateIndex, options, categories, posts, dest),
-        async.apply(blogHelpers.generateCategories, options, categories, categoryDest)
+        async.apply(blogHelpers.generateIndexRss, options, categories, posts, dest),
+        async.apply(blogHelpers.generateCategories, options, categories, categoryDest),
+        async.apply(blogHelpers.generateCategoriesRss, options, categories, categoryDest)
       ], 5, function(err) {
         done();
       });

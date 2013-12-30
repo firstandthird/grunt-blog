@@ -10,6 +10,10 @@ options:
     template: 'example/templates/category.ejs'
     count: 5
     paginationUrl: 'CC_page_XX.html'
+  rss:
+    template: 'example/templates/rss.ejs'
+    templateCategory: 'example/templates/rssCategory.ejs'
+    count: 10
 example:
   src:
     - 'example/posts/*.md'
